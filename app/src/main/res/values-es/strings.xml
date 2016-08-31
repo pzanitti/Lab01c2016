@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Lab01c2016</string>
+    <string name="fixed_term_deposit_calculator">Calculadora de plazo fijo</string>
+    <string name="email_address">Correo electrónico</string>
+    <string name="tax_id">CUIT</string>
+    <string name="deposit_amount">Importe</string>
+    <string name="term_in_days">Cantidad de días</string>
+    <string name="auto_renew">Renovar automáticamente al vencimiento</string>
+    <string name="make_deposit">Hacer plazo fijo</string>
+    <string name="success_message">Plazo fijo realizado. Recibirá %1$d al vencimiento!</string>
+    <string name="failure_message_email">La dirección de correo ingresada no es válida.</string>
+    <string name="failure_message_tax_id">El CUIT ingresado no es válido.</string>
+    <string name="failure_message_deposit_amount">El importe ingresado no es válido.</string>
+    <string name="failure_message_term_in_days">La longitud del plazo no puede ser 0.</string>
+</resources>

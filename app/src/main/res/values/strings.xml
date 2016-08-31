@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Lab01c2016</string>
+    <string name="deposit_amount">Amount</string>
+    <string name="email_address">Email Address</string>
+    <string name="auto_renew">Auto renew upon expiration</string>
+    <string name="failure_message_deposit_amount">The entered amount is not valid.</string>
+    <string name="failure_message_email">The entered email address is not valid.</string>
+    <string name="failure_message_tax_id">The entered tax ID is not valid.</string>
+    <string name="tax_id">Tax ID</string>
+    <string name="term_in_days">Maturity term</string>
+    <string name="small_text" translatable="false">Small Text</string>
+    <string name="failure_message_term_in_days">The length of the term cannot be 0.</string>
+    <string name="fixed_term_deposit_calculator">Fixed-term deposit calculator.</string>
+    <string name="make_deposit">Make fixed-term deposit</string>
+    <string name="success_message">Fixed-term deposit made. You will receive %1$d upon expiration!</string>
+</resources>

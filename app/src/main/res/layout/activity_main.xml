@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+    <TextView android:id="@+id/fixed_term_deposit_calculator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/fixed_term_deposit_calculator" />
+    <TextView android:id="@+id/email_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/email_address"
+        android:labelFor="@+id/email_address_input"/>
+    <EditText
+        android:id="@+id/email_address_input"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textEmailAddress" />
+    <TextView android:id="@+id/tax_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tax_id"
+        android:labelFor="@+id/tax_id_input"/>
+    <EditText
+        android:id="@+id/tax_id_input"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number" />
+    <TextView android:id="@+id/deposit_amount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/deposit_amount"
+        android:labelFor="@+id/deposit_amount_input"/>
+    <EditText
+        android:id="@+id/deposit_amount_input"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="numberDecimal" />
+    <TextView android:id="@+id/term_in_days"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/term_in_days" />
+    <SeekBar
+        android:id="@+id/term_in_days_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="360"/>
+    <TextView android:id="@+id/term_in_days_value"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="..30" />
+    <TextView android:id="@+id/small_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/small_text" />
+    <TextView android:id="@+id/interest_amount"
+        android:textSize="20sp"
+        android:textColor="@color/colorNegro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="$5000"/>
+    <CheckBox
+        android:id="@+id/auto_renew_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/auto_renew" />
+    <Button android:id="@+id/btnStopService"
+        android:layout_width="270dp"
+        android:layout_height="wrap_content"
+        android:text="@string/make_deposit"/>
+    <TextView android:id="@+id/status_message"
+        android:textSize="20sp"
+        android:textColor="@color/colorVerde"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Status message." />
+</LinearLayout>
