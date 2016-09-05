@@ -9,9 +9,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.SeekBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener, SeekBar.OnSeekBarChangeListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,8 +18,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
         Button btnStopService = (Button) findViewById(R.id.btnStopService);
+        SeekBar skbTermInDays = (SeekBar) findViewById(R.id.term_in_days_input);
 
         btnStopService.setOnClickListener(this);
+        skbTermInDays.setOnSeekBarChangeListener(this);
+
+        TextView term_in_days_value = (TextView) findViewById(R.id.term_in_days_value);
+        term_in_days_value.setText(String.valueOf(skbTermInDays.getProgress()));
     }
 
     public void onClick(View v) {
@@ -33,6 +37,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 SeekBar term_in_days_input = (SeekBar) findViewById(R.id.term_in_days_input);
                 Double amount;
                 Integer term;
+                boolean hasErrors = false;
 
                 status_message.setText("");
 
@@ -40,30 +45,50 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 if(TextUtils.isEmpty(email_input.getText().toString()) ||
                         !android.util.Patterns.EMAIL_ADDRESS.matcher(email_input.getText().toString()).matches()) {
                     email_input.setError(getText(R.string.failure_message_email));
-                    break;
+                    hasErrors = true;
                 }
 
                 // Validate tax id
                 if(TextUtils.isEmpty(tax_id_input.getText().toString())) {
                     tax_id_input.setError(getText(R.string.failure_message_tax_id));
+                    hasErrors = true;
                 }
 
                 // Validate amount
                 if(TextUtils.isEmpty(amount_input.getText().toString())) {
                     amount_input.setError(getText(R.string.failure_message_deposit_amount));
-                    break;
+                    hasErrors = true;
                 }
 
                 // Validate term
                 if(term_in_days_input.getProgress() == 0) {
                     status_message.setTextColor(ContextCompat.getColor(this, R.color.colorRojo));
                     status_message.setText(getText(R.string.failure_message_term_in_days));
+                    hasErrors = true;
                 }
 
-                amount = Double.parseDouble(amount_input.getText().toString());
-                term = term_in_days_input.getProgress();
+                if (!hasErrors) {
+                    amount = Double.parseDouble(amount_input.getText().toString());
+                    term = term_in_days_input.getProgress();
+                }
 
                 break;
         }
+    }
+
+    public void onStopTrackingTouch(SeekBar seekBar) {
+    }
+
+    public void onStartTrackingTouch(SeekBar seekBar) {
+    }
+
+    public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+        switch (seekBar.getId()) {
+            case R.id.term_in_days_input:
+                TextView term_in_days_value = (TextView) findViewById(R.id.term_in_days_value);
+                term_in_days_value.setText(String.valueOf(progress));
+                break;
+        }
+
     }
 }
