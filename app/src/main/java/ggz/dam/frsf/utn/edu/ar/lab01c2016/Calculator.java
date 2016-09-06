@@ -22,7 +22,7 @@ public final class Calculator {
             }
         }
 
-        interest = initial_amount * (pow(1 + Double.parseDouble(rate) / 100, (double) term_in_days / 360) - 1);
+        interest = initial_amount * (Math.pow(1 + Double.parseDouble(rate) / 100, (double) term_in_days / 360) - 1);
         return interest;
     }
 }
