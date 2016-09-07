@@ -9,8 +9,9 @@
     <string name="tax_id">Tax ID</string>
     <string name="term_in_days">Maturity term</string>
     <string name="small_text" translatable="false">Small Text</string>
+    <string name="small_text_money" translatable="false">$%1$.2f</string>
     <string name="failure_message_term_in_days">The length of the term cannot be 0.</string>
     <string name="fixed_term_deposit_calculator">Fixed-term deposit calculator.</string>
     <string name="make_deposit">Make fixed-term deposit</string>
-    <string name="success_message">Fixed-term deposit made. You will receive %1$d upon expiration!</string>
+    <string name="success_message">Fixed-term deposit made. You will receive %1$.2f upon expiration!</string>
 </resources>

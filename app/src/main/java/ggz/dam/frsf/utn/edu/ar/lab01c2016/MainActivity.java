@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btnStopService:
+                TextView interest_amount = (TextView) findViewById(R.id.interest_amount);
                 TextView status_message = (TextView) findViewById(R.id.status_message);
                 EditText email_input = (EditText) findViewById(R.id.email_address_input);
                 EditText tax_id_input = (EditText) findViewById(R.id.tax_id_input);
@@ -37,9 +38,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 SeekBar term_in_days_input = (SeekBar) findViewById(R.id.term_in_days_input);
                 Double amount;
                 Integer term;
+                Double interest;
                 boolean hasErrors = false;
 
                 status_message.setText("");
+                interest_amount.setText("");
 
                 // Validate email
                 if(TextUtils.isEmpty(email_input.getText().toString()) ||
@@ -70,6 +73,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 if (!hasErrors) {
                     amount = Double.parseDouble(amount_input.getText().toString());
                     term = term_in_days_input.getProgress();
+                    interest = Calculator.calculate_interest(this, amount, term);
+                    status_message.setTextColor(ContextCompat.getColor(this, R.color.colorVerde));
+                    status_message.setText(String.format(getResources().getString(R.string.success_message), interest));
+                    interest_amount.setText(String.format(getResources().getString(R.string.small_text_money), interest));
                 }
 
                 break;
