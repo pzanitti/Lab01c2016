@@ -8,7 +8,7 @@
     <string name="term_in_days">Cantidad de días</string>
     <string name="auto_renew">Renovar automáticamente al vencimiento</string>
     <string name="make_deposit">Hacer plazo fijo</string>
-    <string name="success_message">Plazo fijo realizado. Recibirá %1$d al vencimiento!</string>
+    <string name="success_message">Plazo fijo realizado. Recibirá %1$.2f al vencimiento!</string>
     <string name="failure_message_email">La dirección de correo ingresada no es válida.</string>
     <string name="failure_message_tax_id">El CUIT ingresado no es válido.</string>
     <string name="failure_message_deposit_amount">El importe ingresado no es válido.</string>
